@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <stdio.h>
 
+int _write_char(char c);
+int print_percent(__attribute__((unused))va_list list);
 int _printf(const char *format, ...);
 int _position(const char *s, int n);
 int _strlen(char *s);
@@ -30,4 +32,4 @@ char *print_c(va_list list);
 char *print_s(va_list list);
 char *print_i(va_list list);
 char *print_bin(va_list list);
-#endif /* #ifndef _HOLBERTON_H */ 
+#endif /* #ifndef _HOLBERTON_H */
