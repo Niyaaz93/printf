@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
 		{"i", print_i},
 		{"d", print_i},
 		{"b", print_bin},
+		{"%", print_percent},
 		{NULL, NULL}
 	};
 	create_buff = malloc(1024 * sizeof(char));
