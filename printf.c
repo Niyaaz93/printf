@@ -35,9 +35,9 @@ int _printf(const char *format, ...)
 		return (-1);
 	for (idx = 0; format[idx] != '\0'; idx++)
 	{
-		/* if (format[idx] == '%' && format[idx + 1] == '%')*/
-		/*continue;*/
-		/*else */ if (format[idx] == '%')
+		if (format[idx] == '%' && format[idx + 1] == '%')
+			continue;
+		else if (format[idx] == '%')
 		{
 			if (format[idx + 1] == ' ')
 				idx += _position(format, idx);
