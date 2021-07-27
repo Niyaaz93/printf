@@ -1,6 +1,28 @@
 #include "holberton.h"
 
 /**
+ * _write_char -  prints a character to the stdout
+ * @c: character to be printed
+ *
+ * Return: 1 (successful), -1 (error)
+ */
+int _write_char(char c)
+{
+	return(write(1, &c, 1));
+}
+/**
+ * print_percent - print the percent sign
+ * @list: list of arguments
+ *
+ * Return: returns the amount of characters printed
+ */
+int print_percent(__attribute__((unused))va_list list)
+{
+	_write_char('%');
+	return (1);
+}
+
+/**
  * print_c - prints char
  * @list: arguement char
  * Return: pointer args
@@ -24,12 +46,12 @@ char *print_c(va_list list)
 
 char *print_s(va_list list)
 {
-	char *s;
+	char *str;
 
-	s = va_arg(list, char *);
-	if (s == NULL)
-		return (s = "(null)");
-	return (s);
+	str = va_arg(list, char *);
+	if (str == NULL)
+		return (str = "(null)");
+	return (str);
 }
 
 /**
@@ -40,7 +62,9 @@ char *print_s(va_list list)
 
 char *print_i(va_list list)
 {
-	int digit = 0, i = 0, neg = 0;
+	int digit = 0;
+	int i = 0;
+	int neg = 0;
 	int divisor = 1000000000;
 	char *output;
 	int num = va_arg(list, int);
@@ -89,4 +113,3 @@ char *print_i(va_list list)
 	output[i] = '\0';
 	return (output);
 }
-
