@@ -72,4 +72,3 @@ int _printf(const char *format, ...)
 	free(create_buff);
 	return (len_buf);
 }
-
