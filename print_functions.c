@@ -48,10 +48,16 @@ char *print_c(va_list list)
 char *print_s(va_list list)
 {
 	char *str;
+	int i;
 
 	str = va_arg(list, char *);
 	if (str == NULL)
 		return (str = "(null)");
+	for (i = 0; i != '\0'; i++)
+	{
+		_write_char(str[i]);
+	}
+
 	return (str);
 }
 
