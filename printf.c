@@ -9,7 +9,8 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int idx, j;
+	int idx;
+	int j;
 	int len_buf = 0;
 	char *s;
 	char *create_buff;
@@ -18,6 +19,7 @@ int _printf(const char *format, ...)
 		{"c", print_c},
 		{"s", print_s},
 		{"i", print_i},
+		{"%", print_percent},
 		{"d", print_i},
 		{"b", print_bin},
 		{NULL, NULL}
@@ -33,9 +35,9 @@ int _printf(const char *format, ...)
 		return (-1);
 	for (idx = 0; format[idx] != '\0'; idx++)
 	{
-		if (format[idx] == '%' && format[idx + 1] == '%')
-			continue;
-		else if (format[idx] == '%')
+		/* if (format[idx] == '%' && format[idx + 1] == '%')*/
+		/*continue;*/
+		/*else */ if (format[idx] == '%')
 		{
 			if (format[idx + 1] == ' ')
 				idx += _position(format, idx);
