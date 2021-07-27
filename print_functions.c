@@ -10,6 +10,7 @@ int _write_char(char c)
 {
 	return(write(1, &c, 1));
 }
+
 /**
  * print_percent - print the percent sign
  * @list: list of arguments
